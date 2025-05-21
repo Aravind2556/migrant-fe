@@ -1,48 +1,52 @@
 import React from 'react';
 
-
 export const CompanyDashboard = () => {
-  
+  const handleNext = (id) => {
+    if (id === 'createjob') window.location.href = '/jobposting';
+    else if (id === 'applierlist') window.location.href = '/fetch-Applied-jobs';
+  };
 
-    const handleNext = (id) => {
-        if (id === 'createjob'){
-            window.location.href ='/jobposting'
-        }
-        else if (id === 'applierlist'){
-            window.location.href ='/fetch-Applied-jobs'
-        }
-    };
+  const cardItems = [
+    {
+      title: 'Post a Job',
+      button: 'Create Job',
+      id: 'createjob',
+      gradient: 'bg-blue-400'
+    },
+    {
+      title: 'View Applicants',
+      button: 'Job Applied List',
+      id: 'applierlist',
+      gradient: 'bg-blue-400'
+    }
+  ];
 
-    return (
-        <div className="p-8 bg-gradient-to-br from-gray-50 to-gray-200 min-h-screen">
-            <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-700 drop-shadow-md">
-                Company Dashboard
-            </h2>
+  return (
+    <div className="min-h-[90vh] bg-gradient-to-br from-gray-100 to-gray-200 py-10">
+      <div className="max-w-6xl mx-auto px-4">
+        <h1 className="text-center text-4xl font-bold text-gray-800 mb-10">Company Dashboard</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {[{
-                    title: 'Job Applied list',
-                    desc: 'View list of all candidates who applied for your jobs.',
-                    action: 'applierlist',
-                }, {
-                    title: 'Create Job',
-                    desc: 'Post a new job and start receiving applications.',
-                    action: 'createjob',
-                }].map(({ title, desc, action }) => (
-                    <div
-                        key={action}
-                        onClick={() => handleNext(action)}
-                        className="bg-white rounded-3xl p-8 shadow-lg border border-gray-300 cursor-pointer
-                   transform transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1
-                   flex flex-col justify-between"
-                    >
-                        <h3 className="text-2xl font-semibold text-blue-600 mb-4">{title}</h3>
-                        <p className="text-gray-700 text-lg leading-relaxed">{desc}</p>
-                    </div>
-                ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {cardItems.map((item, idx) => (
+            <div
+              key={idx}
+              onClick={() => handleNext(item.id)}
+              className="bg-white shadow-xl rounded-2xl overflow-hidden transform transition hover:scale-105 cursor-pointer hover:shadow-2xl"
+            >
+              <div className={`${item.gradient} p-4`}>
+                <h2 className="text-white text-xl font-semibold text-center">{item.title}</h2>
+              </div>
+              <div className="p-6 flex justify-center items-center">
+                <button className="bg-black hover:bg-gray-800 text-white py-2 px-6 rounded-lg transition-all">
+                  {item.button}
+                </button>
+              </div>
             </div>
+          ))}
         </div>
-
-    );
+      </div>
+    </div>
+  );
 };
+
 

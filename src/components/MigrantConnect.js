@@ -1,5 +1,5 @@
 import React from "react";
-import Migrent from '../assets/Migrants imagery.jpg'
+import Migrent from '../assets/2151334694 (1).jpg'
 
 const MigrantConnect = () => {
 

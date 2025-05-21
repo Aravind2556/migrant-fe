@@ -1,6 +1,6 @@
 import React, {  useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import loginImage from '../assets/loginpage.jpg';
+import loginImage from '../assets/istockphoto-1379988910-612x612.jpg';
 
 
 export default function LoginPage() {

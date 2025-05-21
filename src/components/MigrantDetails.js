@@ -106,14 +106,21 @@ export const MigrantDetails = () => {
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-xl w-[90%] max-w-2xl p-8 shadow-2xl relative">
                         <h3 className="text-2xl font-semibold mb-6 text-center text-blue-700">Migrant Full Details</h3>
-                        <div className="grid grid-cols-1 gap-4 text-gray-700 text-sm">
-                            <p><strong>Name:</strong> {selectedMigrant.name}</p>
-                            <p><strong>Email:</strong> {selectedMigrant.email}</p>
-                            <p><strong>Phone:</strong> {selectedMigrant.phoneNumber}</p>
-                            <p><strong>Gender:</strong> {selectedMigrant.gender}</p>
-                            <p><strong>Date of Birth:</strong> {new Date(selectedMigrant.dateOfBirth).toLocaleDateString()}</p>
-                            <p><strong>Migration Reason:</strong> {selectedMigrant.migrationReason}</p>
-                            <p><strong>Present Address:</strong> {selectedMigrant.presentAddress}</p>
+                        <div className="bg-white p-6 rounded-2xl shadow-md">
+                            <h2 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Migrant Details</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm text-gray-700">
+                                <div><span className="font-medium text-gray-600">Name:</span> {selectedMigrant.name}</div>
+                                <div><span className="font-medium text-gray-600">Email:</span> {selectedMigrant.email}</div>
+                                <div><span className="font-medium text-gray-600">Phone:</span> {selectedMigrant.phoneNumber}</div>
+                                <div><span className="font-medium text-gray-600">Gender:</span> {selectedMigrant.gender}</div>
+                                <div><span className="font-medium text-gray-600">Date of Birth:</span> {new Date(selectedMigrant.dateOfBirth).toLocaleDateString()}</div>
+                                <div><span className="font-medium text-gray-600">Migration Reason:</span> {selectedMigrant.migrationReason}</div>
+                                <div><span className="font-medium text-gray-600">Present Address:</span> {selectedMigrant.presentAddress}</div>
+                                <div><span className="font-medium text-gray-600">Permanent Address:</span> {selectedMigrant.permanentAddress}</div>
+                                <div><span className="font-medium text-gray-600">Pin Code:</span> {selectedMigrant.pinCode}</div>
+                                <div><span className="font-medium text-gray-600">State of Origin:</span> {selectedMigrant.stateOfOrigin}</div>
+                                <div><span className="font-medium text-gray-600">Languages Known:</span> {selectedMigrant.languagesKnown}</div>
+                            </div>
                         </div>
 
                         {showReasonInput ? (

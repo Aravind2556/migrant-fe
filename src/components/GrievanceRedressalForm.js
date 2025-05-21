@@ -50,7 +50,7 @@ const GrievanceRedressalForm = () => {
   
 
   return (
-    <div className="container mx-auto mt-10 px-4 max-w-3xl min-h-[75vh]">
+    <div className="container mx-auto p-10 max-w-3xl min-h-[75vh]">
       <div className="bg-gradient-to-tr from-white via-blue-50 to-blue-100 p-10 shadow-xl rounded-3xl border border-blue-200">
         <h2 className="text-center font-bold text-3xl mb-8 text-blue-800">Grievance Redressal Form</h2>
 
